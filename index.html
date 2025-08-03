@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Programmer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Key Programmer</h1>
+        <button onclick="connectDevice()">Connect to Device</button>
+        <div id="status">Not Connected</div>
+
+        <select id="vehicleSelect">
+            <option value="None">Select Vehicle</option>
+            <option value="Toyota Camry">Toyota Camry</option>
+            <option value="Honda Accord">Honda Accord</option>
+            <option value="Ford F-150">Ford F-150</option>
+        </select>
+
+        <button onclick="simulateProgramming()">Program Key</button>
+        <div id="log"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
