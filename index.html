@@ -2,28 +2,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Key Programmer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Programmer</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Key Programmer</h1>
-        <button onclick="connectDevice()">Connect to Device</button>
-        <div id="status">Not Connected</div>
-
-        <select id="vehicleSelect">
-            <option value="None">Select Vehicle</option>
-            <option value="Toyota Camry">Toyota Camry</option>
-            <option value="Honda Accord">Honda Accord</option>
-            <option value="Ford F-150">Ford F-150</option>
-        </select>
-
-        <button onclick="simulateProgramming()">Program Key</button>
-        <div id="log"></div>
+  <div class="container">
+    <h1>Vehicle Key Programmer</h1>
+    <div class="vin-scan">
+      <label for="vin">VIN:</label>
+      <input type="text" id="vin" placeholder="Scan or enter VIN manually" />
+      <button onclick="scanVIN()">📷 Scan VIN</button>
     </div>
 
-    <script src="app.js"></script>
+    <div class="selector">
+      <label for="brand">Brand:</label>
+      <select id="brand" onchange="loadModels()">
+        <option value="">Select Brand</option>
+        <option value="nissan">Nissan</option>
+        <option value="dodge">Dodge</option>
+        <option value="ford">Ford</option>
+        <option value="toyota">Toyota</option>
+        <option value="honda">Honda</option>
+      </select>
+    </div>
+
+    <div class="selector">
+      <label for="model">Model:</label>
+      <select id="model">
+        <option value="">Select Model</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button onclick="connectDevice()">🔌 Connect to Device</button>
+      <button onclick="programKey()">🔑 Program Key</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
